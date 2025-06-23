@@ -5,6 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["vitest/globals"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -20,7 +21,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "./jest.setup.ts"],
+  "include": ["src", "vitest.setup.ts","__tests__/*.test.tsx","__tests__/*.test.ts"],
   
   "files": [],
   
@@ -28,4 +29,5 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" },
   ],
+
 }

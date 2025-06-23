@@ -17,6 +17,7 @@ describe("Greet", () => {
             render(<Greet name="Jilu" />);
             const textElement = screen.getByText("Hello Jilu");
             expect(textElement).toBeInTheDocument();
+            
         })
     })
 });
