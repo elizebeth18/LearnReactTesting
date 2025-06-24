@@ -1,100 +1,54 @@
-# React + TypeScript + Vite
+# Learn Testing in React + TypeScript + Vite
 
 ## Step 1: Install the Required Dependencies:
 
 npm install -D vitest @vitest/coverage-v8 @vitest/ui @testing-library/react @testing-library/dom @testing-library/jest-dom @testing-library/user-event jsdom
 
-## Step 2: Create Configuration Files
+## Step 2: Create Configuration Files :
 Next, let’s create the necessary configuration files.
 
 Create a vite.setup.ts file in your project root:
 
 import '@testing-library/jest-dom'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Step 3: Next, create a vitest.config.ts file:
 
 ```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
+import { defineConfig, configDefaults } from 'vitest/config'
+
+
+export default defineConfig({
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    css: true,
+    setupFiles: './vitest.setup.ts',
+    exclude: [...configDefaults.exclude, '**/e2e/**'], // Example: Exclude e2e tests
+    coverage: {
+      provider: 'v8', // Use Vite's default coverage provider
+      reporter: ['text', 'json', 'html']
+    }
+  }
 })
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Step 4: Next, update the tsconfig.json file with:
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+{
+  "compilerOptions": {
+    // ...other existing code
+    "types": [...other types, "vitest/globals"] // Add Jest types
+  },
+  "include": [...others included, "__tests__/*.test.tsx","__tests__/*.test.ts"],
+}
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Step 5: Finally, update your package.json Scripts
+```js
+"scripts": {
+  "test": "vitest",
+  "test:coverage": "vitest run --coverage",
+  "test:coverage-ui": "vitest --ui --coverage.enabled=true",
+}
 ```
