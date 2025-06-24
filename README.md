@@ -8,8 +8,9 @@ npm install -D vitest @vitest/coverage-v8 @vitest/ui @testing-library/react @tes
 Next, let’s create the necessary configuration files.
 
 Create a vite.setup.ts file in your project root:
-
+```js
 import '@testing-library/jest-dom'
+```
 
 ## Step 3: Next, create a vitest.config.ts file:
 
@@ -52,3 +53,24 @@ export default defineConfig({
   "test:coverage-ui": "vitest --ui --coverage.enabled=true",
 }
 ```
+
+### Priority Order of RTL Queries
+1. getByRole                        getAllByRole
+2. getByLabelText                   getAllByLabelText
+3. getByPlaceholderText             getAllByPlaceholderText
+4. getByText                        getAllByText
+5. getByDisplayValue                getAllByDisplayValue
+6. getByAltText                     getAllByAltText
+7. getByTitle                       getAllByTitle
+8. getByTestId                      getAllByTestId
+
+
+
+
+/**
+     * TextMatch: is the type of the first argument used in RTL queries
+     * which can be : 
+     *      1)String 
+     *      2)Regex 
+     *      3)Function
+     */
