@@ -55,14 +55,14 @@ export default defineConfig({
 ```
 
 ### Priority Order of RTL Queries
-1. getByRole                        getAllByRole
-2. getByLabelText                   getAllByLabelText
-3. getByPlaceholderText             getAllByPlaceholderText
-4. getByText                        getAllByText
-5. getByDisplayValue                getAllByDisplayValue
-6. getByAltText                     getAllByAltText
-7. getByTitle                       getAllByTitle
-8. getByTestId                      getAllByTestId
+1. getByRole                          getAllByRole
+2. getByLabelText                     getAllByLabelText
+3. getByPlaceholderText               getAllByPlaceholderText
+4. getByText                          getAllByText
+5. getByDisplayValue                  getAllByDisplayValue
+6. getByAltText                       getAllByAltText
+7. getByTitle                         getAllByTitle
+8. getByTestId                        getAllByTestId
 
 
 
