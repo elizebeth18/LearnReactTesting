@@ -8,8 +8,9 @@ npm install -D vitest @vitest/coverage-v8 @vitest/ui @testing-library/react @tes
 Next, let’s create the necessary configuration files.
 
 Create a vite.setup.ts file in your project root:
-
+```js
 import '@testing-library/jest-dom'
+```
 
 ## Step 3: Next, create a vitest.config.ts file:
 
