@@ -1,15 +1,52 @@
 # React + TypeScript + Vite
 
-Step 1: Install the Required Dependencies:
+## Step 1: Install the Required Dependencies:
 
 npm install -D vitest @vitest/coverage-v8 @vitest/ui @testing-library/react @testing-library/dom @testing-library/jest-dom @testing-library/user-event jsdom
 
-Step 2: Create Configuration Files
+## Step 2: Create Configuration Files
 Next, let’s create the necessary configuration files.
 
 Create a vite.setup.ts file in your project root:
 
 import '@testing-library/jest-dom'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Currently, two official plugins are available:
 
