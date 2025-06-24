@@ -55,22 +55,26 @@ export default defineConfig({
 ```
 
 ### Priority Order of RTL Queries
-1. getByRole                          getAllByRole
-2. getByLabelText                     getAllByLabelText
-3. getByPlaceholderText               getAllByPlaceholderText
-4. getByText                          getAllByText
-5. getByDisplayValue                  getAllByDisplayValue
-6. getByAltText                       getAllByAltText
-7. getByTitle                         getAllByTitle
-8. getByTestId                        getAllByTestId
+1. getByRole                          
+2. getByLabelText                     
+3. getByPlaceholderText               
+4. getByText                          
+5. getByDisplayValue                  
+6. getByAltText                       
+7. getByTitle                         
+8. getByTestId                        
 
 
 
+**/**
+ * TextMatch: is the type of the first argument used in RTL queries
+ * which can be : 1)String 2)Regex 3)Function
+ * 
+ * queryBy: Returns the matching node for the query and returns null if no match  found, it is useful for asseting an element that is not present
+ * 
+ * queryAllBy: Returns an array of all matching nodes for the query and returns an empty array if no match found
+ ** /**
 
-/**
-     * TextMatch: is the type of the first argument used in RTL queries
-     * which can be : 
-     *      1)String 
-     *      2)Regex 
-     *      3)Function
-     */
+ To handle Apperance/Disapperance of the code we need to add test cases using findBy/findAllBy
+
+ **findBy:** 1)Returns a promise which resolves when an element is found matching the given query 2)The promise is rejected if no element is found or if more than 1 element is found after a timeout of 1000ms
