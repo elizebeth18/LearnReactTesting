@@ -1,4 +1,4 @@
-# Learn Testing in React + TypeScript + Vite
+# Learn Testing in React + TypeScript + Vite Notes
 
 ## Step 1: Install the Required Dependencies:
 
@@ -78,3 +78,5 @@ export default defineConfig({
  To handle Apperance/Disapperance of the code we need to add test cases using findBy/findAllBy
 
  **findBy:** 1)Returns a promise which resolves when an element is found matching the given query 2)The promise is rejected if no element is found or if more than 1 element is found after a timeout of 1000ms
+
+ **findAllBy:** 1)Returns a promise which resolves when an array of elements when any element are found matching the given query 2)The promise is rejected if no element is found after a timeout of 1000ms
