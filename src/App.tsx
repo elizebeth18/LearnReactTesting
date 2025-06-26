@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div className="card">
-        <Skills skills={["HTML","JavaScript"]} />
+        {/* <Skills skills={["HTML","JavaScript"]} /> */}
         <Counter />
       </div>
     </>
