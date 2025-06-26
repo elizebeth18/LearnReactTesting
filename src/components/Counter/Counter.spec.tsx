@@ -1,0 +1,34 @@
+import {render, screen} from '@testing-library/react';
+import user from '@testing-library/user-event';
+import Counter from './Counter';
+
+describe("Counter",() => {
+
+    test("renders correctly",()=>{
+        render(<Counter />);
+        const countElement = screen.getByRole('heading');
+        expect(countElement).toBeInTheDocument();
+        const incrementBtn = screen.getByRole('button',{
+            name: 'Increment'
+        });
+        expect(incrementBtn).toBeInTheDocument();
+    });
+
+    test("renders a count of 0",() => {
+        render(<Counter />);
+        const countElement = screen.getByRole("heading");
+        expect(countElement).toHaveTextContent("0")
+    });
+
+    test("renders a count of 1 after the button click",async () => {
+        user.setup();
+        render(<Counter/>);
+        const incrementBtn = screen.getByRole('button',{
+            name:'Increment'
+        });
+        await user.click(incrementBtn);
+        const countHeading = screen.getByRole('heading');
+        expect(countHeading).toHaveTextContent('1');
+    });
+
+})

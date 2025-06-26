@@ -2,11 +2,8 @@ import {render,screen} from '@testing-library/react';
 import Skills from './skills';
 
 
-
 describe('Skills',() => {
 
-    
-    
     const skills = ['HTML','JavaScript','CSS'];
 
     test('renders correctly',() => {
