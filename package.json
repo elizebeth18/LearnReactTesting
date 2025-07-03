@@ -37,6 +37,7 @@
     "jest-environment-jsdom": "^30.0.2",
     "jest-transformer-svg": "^2.1.0",
     "jsdom": "^26.1.0",
+    "msw": "^2.10.2",
     "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
     "typescript": "~5.8.3",
