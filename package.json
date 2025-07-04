@@ -6,13 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint --ignore-pattern .gitignore .",
+    "format": "prettier --ignore-pattern .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
     "preview": "vite preview",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:coverage-ui": "vitest --ui --coverage.enabled=true"
   },
   "dependencies": {
+    "eslint-plugin-jest-dom": "^5.5.0",
+    "prettier": "^3.6.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

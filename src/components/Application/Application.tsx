@@ -20,7 +20,7 @@ const Application = () => {
         </div>
         <div>
           <label htmlFor="bio">Bio</label>
-          <textarea id="bio" aria-multiline="true"/>
+          <textarea id="bio" aria-multiline="true" />
         </div>
         <div>
           <label htmlFor="job-location">Job location</label>
@@ -42,7 +42,7 @@ const Application = () => {
         <button disabled>Submit</button>
       </form>
     </>
-  )
-}
+  );
+};
 
 export default Application;
